@@ -1,0 +1,19 @@
+# Archivo de configuración de ejemplo para Doxygen
+
+# Identificación del proyecto
+PROJECT_NAME           = "FOCADs"
+OUTPUT_DIRECTORY       = ./docs
+
+# Lista de directorios que contienen los archivos que deseas documentar
+INPUT                  = loquesea.php
+
+# Patrones de archivos que Doxygen debe incluir en la documentación
+FILE_PATTERNS          = *.php
+
+# Recursividad para incluir subdirectorios
+RECURSIVE              = YES
+
+# Otras opciones de configuración según tu preferencia
+
+GENERATE_LATEX         = YES
+
