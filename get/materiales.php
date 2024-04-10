@@ -12,7 +12,7 @@
 
 function getMateriales($con, $order, $sort)
 {
-    $sqlQuery = "SELECT * FROM materiales";
+    $sqlQuery = "SELECT IDMaterial, nombre, edicion, anio, fecha, segunda_edicion, division, primera_edicion  FROM materiales";
 
     if ($order!=null) {
         $sqlQuery .= " ORDER BY $order";
@@ -48,7 +48,7 @@ function getMaterialesbyParam($param, $value, $con)
 {
 
 
-    $sqlQuery = "SELECT * FROM materiales WHERE " . $param . " = ?";
+    $sqlQuery = "SELECT IDMaterial, nombre, edicion, anio, fecha, segunda_edicion, division, primera_edicion  FROM materiales WHERE " . $param . " = ?";
 
     $stmt = $con->prepare($sqlQuery);
     $stmt->execute([$value]);
@@ -99,7 +99,7 @@ function getMaterialesbyParam($param, $value, $con)
      // Unir las condiciones con AND para formar la cláusula WHERE
      $whereClause = implode(" AND ", $conditions);
  
-     $sqlQuery = "SELECT * FROM materiales WHERE $whereClause";
+     $sqlQuery = "SELECT IDMaterial, nombre, edicion, anio, fecha, segunda_edicion, division, primera_edicion FROM materiales WHERE $whereClause";
      
      // Añadir ORDER BY 
      if ($order) {

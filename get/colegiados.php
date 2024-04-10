@@ -14,7 +14,7 @@ function getColegiados($con, $order, $sort)
 
 
 
-    $sqlQuery = "SELECT * FROM colegiados";
+    $sqlQuery = "SELECT IDColegiado, numColegiado, nombre, apellidos, email, dni FROM colegiados";
 
     if ($order!=null) {
         $sqlQuery .= " ORDER BY $order";
@@ -78,7 +78,7 @@ function getColegiados($con, $order, $sort)
 function getColegiadosbyParam($param, $value, $con)
 {
 
-    $sqlQuery = "SELECT * FROM colegiados WHERE " . $param . " = ?";
+    $sqlQuery = "SELECT IDColegiado, numColegiado, nombre, apellidos, email, dni FROM colegiados WHERE " . $param . " = ?";
 
     $stmt = $con->prepare($sqlQuery);
     $stmt->execute([$value]);
@@ -131,7 +131,7 @@ function getColegiadosbyParams($parametros, $con)
     // Unir las condiciones con AND para formar la cláusula WHERE
     $whereClause = implode(" AND ", $conditions);
 
-    $sqlQuery = "SELECT * FROM colegiados WHERE $whereClause";
+    $sqlQuery = "SELECT IDColegiado, numColegiado, nombre, apellidos, email, dni FROM colegiados WHERE $whereClause";
 
          // Añadir ORDER BY 
          if ($order) {
